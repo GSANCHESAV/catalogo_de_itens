@@ -1,0 +1,29 @@
+{% extends "main.html" %}
+{% block content %}
+
+<div class="navbar navbar-expand"><br /><br /></div>
+
+<nav class="navbar navbar-expand fixed-top navbar-dark bg-dark px-5">
+
+    <a class="navbar-brand ml-5" href="{{ url_for('exibirCatalogo') }}">
+      <img src="/static/img/brand-toolbar.png" width="auto" height="30" alt="Logo do Catálogo">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('exibirCatalogo') }}">Home</a>
+            </li>
+
+        </ul>
+
+    <a class="btn btn-outline-warning px-4 mr-5" href="{{url_for('exibirLogin')}}">Login</a>
+
+    </div>
+</nav>
+
+{% endblock %}

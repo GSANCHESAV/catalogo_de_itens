@@ -1,0 +1,69 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header_usuario.html" %}
+
+
+    <div class="d-flex justify-content-center mt-4 mb-4">
+        <h1 class="text-center">Catálogo de Itens</h1>
+    </div>
+
+<!-- O get_flashed_messages traz um array de mensagens flash armazenando-as na vaiavel messages-->
+    <div class="d-flex justify-content-center w-100">
+        {% with mensagens = get_flashed_messages() %}
+            {% if mensagens %}
+            <div class="list-group w-75">
+                {% for mensagem in mensagens %}
+                <div class="alert alert-info alert-dismissible fade show" role="alert">
+                    <strong>{{ mensagem }}</strong>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+        {% endwith %}
+    </div>
+
+    <div class="d-flex text-center">
+
+        <div class="col-2 p-0">
+            <div class="d-flex flex-column px-3 py-3 rounded" style="border:1.5px solid gray; max-height:fit-content;">
+                <h5 class="text-center">Categorias</h5>
+                <div class="list-group mt-2">
+                    {% for categoria in categorias %}
+                    <a class="list-group-item text-center" href="{{ url_for('exibirCategoria',categoria_nome=categoria.nome) }}">{{ categoria.nome }}</a>
+                    {% endfor %}
+                </div>
+
+                <br />
+                <a class="btn btn-primary" href="{{ url_for('novoItem',categoria_nome='Roupas') }}">Adicionar Item</a>
+            </div>
+        </div>
+
+        <div class="d-flex align-content-around flex-wrap col-10">
+            {% for i in itens %}
+            <a href="{{ url_for('exibirItem',categoria_nome=i.categoria,item_id=i.id) }}">
+                <div class="card w-25">
+                    <div class="card-body">
+                        <img class="card-img-top w-auto" src="https://cdn.awsli.com.br/production/static/img/produto-sem-imagem.gif" alt="{{i.nome}}">
+                        <div class="card-body text-center px-1">
+                            <div class="pb-0 mb-4">
+                                <h5 class="card-title mb-1" >{{i.nome}}</h5>
+                                <a href="{{ url_for('exibirCategoria',categoria_nome=i.categoria)}}" class="card-text text-muted">{{ i.categoria }}</a>
+                                <div class="mt-2" style="max-height:68px !important;overflow: auto !important;">
+                                    <p class="card-text text-left">{{i.descricao}}</p>
+                                </div>
+                                <div class="position-absolute" style="bottom:10px !important; right:0 !important; left:0 !important;">
+                                    <h5 class="card-title text-center mt-3">R$ {{ i.preco }}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+
+    <br />
+
+
+{% endblock %}

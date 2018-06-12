@@ -1,0 +1,18 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header_usuario.html" %}
+
+<div class="d-flex justify-content-center">
+    <form class="card p-5" action="{{ url_for('deletarItem',categoria_nome=item.categoria, item_id=item.id) }}" method="POST">
+        <h2 class="text-center">Deseja Excluir o Item: <i>{{ item.nome }}</i> ?</h2>
+        <br />
+        <div class="d-flex justify-content-around">
+            <a href="{{ url_for('exibirCatalogoUsuario', categoria_nome=item.categoria) }}">Cancelar</a>
+            <input class="btn btn-outline-danger"type='submit', value='Excluir'>
+        </div>
+    </form>
+</div>
+
+<br />
+
+{% endblock %}

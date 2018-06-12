@@ -1,0 +1,11 @@
+div.ver-mais-item {
+    position: absolute !important;
+    bottom: 20px !important;
+    right: 0 !important;
+    left: 0 !important;
+}
+
+.desc-scroll {
+    max-height:65px !important;
+    overflow: auto !important;
+}

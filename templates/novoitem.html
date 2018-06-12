@@ -1,0 +1,35 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header_usuario.html" %}
+
+    <br />
+
+    <div class="d-flex justify-content-center">
+        <form class="card p-5"  action= "{{ url_for('novoItem', categoria_nome=categoria_nome) }}" method="POST">
+            <h3 class="text-center">Adicionar um Novo Item</h3><br />
+
+            <label for="nome">Nome</label>
+            <input id="nome" type="text" name="nome" placeholder="Nome do Item" /><br />
+
+            <label for="categoria">Categoria</label>
+            <select id="categoria" name="categoria" required>
+                {% for cat in categorias %}
+                <option name="{{cat.nome}}" value="{{cat.nome}}"/>{{cat.nome}}<br/>
+                {% endfor %}
+            </select><br/>
+
+            <label for="descrição">Descrição</label>
+            <textarea id="descricao" name="descricao" placeholder="Descrição..."></textarea><br />
+
+            <label for="preco">Preço</label>
+            <input id="preco" type="text" name="preco" placeholder="00,00" /><br />
+
+            <div class="d-flex justify-content-around">
+                <a href="{{ url_for('exibirCatalogoUsuario', categoria_nome=categoria_nome) }}">Cancelar</a>
+                <input class="btn btn-outline-success"type="submit" value="Adicionar"></a>
+            </div>
+        </form>
+    </div>
+
+    <br />
+{% endblock %}

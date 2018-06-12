@@ -1,0 +1,43 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header_usuario.html" %}
+<div>
+    <h1 class="text-center">Editar o item: <i>{{item.nome}}</i></h1>
+</div>
+
+<br />
+
+<div class="d-flex justify-content-center">
+    <form class="card p-5" id="formEditaItem" action="{{ url_for('editarItem',categoria_nome=item.categoria, item_id=item.id) }}" method="POST">
+
+        <label class="card-title" for="nome">Nome</label>
+        <input id="nome" type="text" name="nome" value="{{item.nome}}" size="42" placeholder="{{item.nome}}" required/>
+        <br/>
+
+        <label class="card-title" for="categoria">Categoria</label>
+        <select id="categoria" name="categoria" required><br/>
+            {% for cat in categorias %}
+            <option name="{{cat.nome}}" value="{{cat.nome}}"/>{{cat.nome}}<br/>
+            {% endfor %}
+        </select>
+        <br/>
+
+        <label class="card-title" for="descricao">Descrição</label>
+        <textarea id="descricao" name="descricao" value="{{item.descricao}}" form="formEditaItem" COLS=40 ROWS=5 required>{{ item.descricao }}</textarea>
+        <br/>
+
+        <label class="card-title" for="preco">Preço</label>
+        <input id="preco" type="text" name="preco" value="{{item.preco}}" placeholder="{{item.preco}}" required/>
+        <br/>
+
+        <div class="d-flex justify-content-around">
+            <a href="{{ url_for('exibirCategoriaUsuario', categoria_nome=item.categoria) }}">Cancelar</a>
+            <input class="btn btn-outline-info" type="submit" value="Editar" />
+        </div>
+
+    </form>
+</div>
+
+<br />
+
+{% endblock %}
