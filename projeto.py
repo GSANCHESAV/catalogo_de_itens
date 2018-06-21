@@ -20,13 +20,13 @@ app = Flask(__name__)
 
 # Declara o Client ID fazendo referencia ao arquivo client_secrets.json
 CLIENT_ID = json.loads(open(
-                            'client_secrets.json', 'r'
+                            '/var/www/Catalogo/client_secrets.json', 'r'
                             ).read())['web']['client_id']
 # Nome do Aplicativo registrado no Google Dev
 APPLICATION_NAME = "Catalogo Itens App"
 
 
-engine = create_engine('sqlite:///catalogodeitems.db')
+engine = create_engine('postgresql://catalog:catalog@localhost/catalog')
 Base.metadata.bind = engine
 
 DBSession = sessionmaker(bind=engine)
@@ -59,7 +59,7 @@ def gconnect():
     print(code)
 
     try:
-        oauth_flow = flow_from_clientsecrets('client_secrets.json', scope='')
+        oauth_flow = flow_from_clientsecrets('/var/www/Catalogo/client_secrets.json', scope='')
         oauth_flow.redirect_uri = 'postmessage'
         credentials = oauth_flow.step2_exchange(code)
     except FlowExchangeError:
