@@ -1,5 +1,5 @@
-# Projeto 3 - Catálogo de Itens
-## Udacity - Full Stack - Projeto - Catálogo de Itens
+# Projeto 5 - Configuração do Servidor Linux
+## Udacity - Full Stack Web
 
 Feito por Guilherme Sanches para o Udacity [Full Stack Web Developer Nanodegree](https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd004)
 
@@ -32,10 +32,6 @@ Para conectar no seu terminal (ssh grader@52.90.183.40 -p 2200 -i chave-privada)
 - IP: 52.90.183.40
 - Porta SSH: 2200
 - URL: http://ec2-52-90-183-40.compute-1.amazonaws.com/
-
-
-
-
 
 # Alterações de configuração
 ## Configuração do Firewall (UFW)
