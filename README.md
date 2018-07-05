@@ -244,3 +244,9 @@ Estes são os conteúdos:
 #### Reinicie o Apache
 `sudo service apache2 restart`
 
+## Referências
+- [Ask Ubuntu](https://askubuntu.com/)
+- [Docs do PosgreSQL](https://www.postgresql.org/docs/)
+- [Apache Docs](https://httpd.apache.org/docs/2.4/)
+- [Como instalar e usar o PostgreSQL no Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-14-04)
+- O Stackoverflow e o Readme de outros alunos FSND no Github também foram úteis em momentos de necessidade.
