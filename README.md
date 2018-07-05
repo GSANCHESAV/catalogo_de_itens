@@ -38,7 +38,7 @@ Para conectar no seu terminal (ssh grader@52.90.183.40 -p 2200 -i chave-privada)
 
 
 # Alterações de configuração
-## Configuração do Firewall Descomplicado (UFW)
+## Configuração do Firewall (UFW)
 Eu decidi começar o projeto pela configuração do ufw. Portanto, se eu fosse bloqueado do servidor, isso aconteceria no começo.
 
 Por padrão, bloqueie todas as conexões de entrada em todas as portas:
