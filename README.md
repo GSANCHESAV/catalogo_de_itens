@@ -26,9 +26,10 @@ O projeto consiste em um módulo principal do Python (projeto.py) que executa o 
 
 ### Informações para acessar o projeto
 
-Para conectar no seu terminal (ssh grader@52.90.183.40 -p 2200 -i chave-privada). Vou enviar a chave privada nas nota e a senha a ser utilizada será 190692.
+Para conectar no seu terminal (ssh grader@52.90.183.40 -p 2200 -i chave-privada).
+
 #### Resumo
-- Senha (password): 190692
+- Senha (password): ******
 - IP: 52.90.183.40
 - Porta SSH: 2200
 - URL: http://ec2-52-90-183-40.compute-1.amazonaws.com/
